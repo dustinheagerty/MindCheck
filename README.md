@@ -19,13 +19,6 @@
 
 ---
 
-## Tech Stack
-- Frontend: React
-- Backend: Node.js + Express
-- Data: JSON (initially)
-
----
-
 ## Setup
 ```bash
 npm run dev

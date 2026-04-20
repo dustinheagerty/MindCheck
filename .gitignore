@@ -1,2 +1,5 @@
 node_modules/
 db/mindcheck.db
+server/db/mindcheck.db
+server/.env
+.env

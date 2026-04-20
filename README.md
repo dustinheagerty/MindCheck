@@ -136,10 +136,21 @@ Dustin Heagerty · William Bezares · Ian Arredondo · Oscar Hernandez · Christ
 ---
 
 ## Setup
+
+**Backend**
 ```bash
+cd server
 npm install
 mkdir db
-npm run dev
+cp .env.example .env
+node server.js
 ```
+Runs on `http://localhost:5000`
 
+**Frontend**
+```bash
+npm install
+npm start
+```
+Runs on `http://localhost:3000`
 

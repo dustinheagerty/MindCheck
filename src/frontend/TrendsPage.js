@@ -5,8 +5,8 @@ import {
 } from 'recharts';
 import Nav from '../components/Nav';
 import { MOODS } from '../components/MoodPicker';
-import { trendsService, entriesService } from '../services/api';
-import './TrendsPage.css';
+import { entriesService, trendsService, promptsService, settingsService } from './api';
+// import './TrendsPage.css';
 
 // Maps mood value 1-5 to its CSS variable color string
 const MOOD_COLORS = ['#e57373','#f4a261','#f9c74f','#90be6d','#43aa8b'];

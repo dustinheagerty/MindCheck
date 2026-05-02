@@ -2,13 +2,13 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 
-import LandingPage     from './pages/LandingPage';
-import LoginPage       from './pages/LoginPage';
-import RegisterPage    from './pages/RegisterPage';
-import DashboardPage   from './pages/DashboardPage';
-import CheckInPage     from './pages/CheckInPage';
-import HistoryPage     from './pages/HistoryPage';
-import TrendsPage      from './pages/TrendsPage';
+import LandingPage     from './frontend/LandingPage';
+import LoginPage       from './frontend/LoginPage';
+import RegisterPage    from './frontend/RegisterPage';
+import DashboardPage   from './frontend/DashboardPage';
+import CheckInPage     from './frontend/CheckInPage';
+import HistoryPage     from './frontend/HistoryPage';
+import TrendsPage      from './frontend/TrendsPage';
 
 // Route guard – redirect unauthenticated users to /login
 function PrivateRoute({ children }) {

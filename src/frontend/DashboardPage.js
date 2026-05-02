@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Nav from '../components/Nav';
 import { MOODS } from '../components/MoodPicker';
-import { entriesService, trendsService, promptsService } from '../services/api';
-import './DashboardPage.css';
+import { entriesService, trendsService, promptsService, settingsService } from './api';
+// import './DashboardPage.css';
 
 function greeting() {
   const h = new Date().getHours();

@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Nav from '../components/Nav';
 import MoodPicker, { MOODS } from '../components/MoodPicker';
-import { entriesService } from '../services/api';
-import './CheckInPage.css';
+import { entriesService, trendsService, promptsService, settingsService } from "./api";
+// import './CheckInPage.css';
 
 const SUGGESTION_TAGS = ['work', 'school', 'family', 'health', 'social', 'exercise', 'sleep', 'stress'];
 

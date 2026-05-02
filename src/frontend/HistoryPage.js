@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Nav from '../components/Nav';
 import MoodPicker, { MOODS } from '../components/MoodPicker';
-import { entriesService } from '../services/api';
-import './HistoryPage.css';
+import { entriesService, trendsService, promptsService, settingsService } from './api';
+// import './HistoryPage.css';
 
 export default function HistoryPage() {
   const [entries,  setEntries]  = useState([]);

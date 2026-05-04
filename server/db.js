@@ -1,7 +1,31 @@
-const Database = require("better-sqlite3");
+const { Database: _Database } = require("node-sqlite3-wasm");
 const path = require("path");
+const fs = require("fs");
 
-const db = new Database(path.join(__dirname, "db", "mindcheck.db"));
+const dbDir = path.join(__dirname, "db");
+if (!fs.existsSync(dbDir)) fs.mkdirSync(dbDir, { recursive: true });
+
+const _db = new _Database(path.join(dbDir, "mindcheck.db"));
+
+// Wrap statements to accept spread positional args like better-sqlite3
+function wrapStmt(stmt) {
+  function normalize(args) {
+    return args.length === 1 ? args[0] : args;
+  }
+  return {
+    get(...args) { return stmt.get(normalize(args)); },
+    all(...args) { return stmt.all(normalize(args)); },
+    run(...args) {
+      const r = stmt.run(normalize(args));
+      return { lastInsertRowid: Number(r.lastInsertRowid), changes: r.changes };
+    },
+  };
+}
+
+const db = {
+  exec(sql) { return _db.exec(sql); },
+  prepare(sql) { return wrapStmt(_db.prepare(sql)); },
+};
 
 db.exec(`
   CREATE TABLE IF NOT EXISTS users (

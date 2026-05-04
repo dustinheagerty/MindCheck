@@ -1,0 +1,37 @@
+.mood-picker {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.mood-picker--compact {
+  gap: 0.5rem;
+}
+
+.mood-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.85rem 1.1rem;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.mood-btn:hover {
+  border-color: var(--mc, var(--color-accent));
+  transform: translateY(-2px);
+}
+
+.mood-btn.selected {
+  border-color: var(--mc, var(--color-accent));
+  background: color-mix(in srgb, var(--mc, var(--color-accent)) 10%, white);
+}
+
+.mood-btn__emoji { font-size: 1.75rem; }
+.mood-btn__label { font-size: 0.8rem; color: var(--color-text-muted); }
+
+.mood-picker--compact .mood-btn { padding: 0.6rem 0.8rem; }
+.mood-picker--compact .mood-btn__emoji { font-size: 1.35rem; }
